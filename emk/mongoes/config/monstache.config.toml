@@ -1,0 +1,24 @@
+mongo-url="mongodb://k5b201.p.ssafy.io:9042,k5b201.p.ssafy.io:9142,k5b201.p.ssafy.io:9242/?replicaSet=docker-rs"
+elasticsearch-urls=["http://elastic:k5b201eagle@k5b201.p.ssafy.io:9200"]
+elasticsearch-user = "elastic"
+elasticsearch-password = "k5b201eagle"
+elasticsearch-max-conns = 4
+elasticsearch-max-seconds = 5
+dropped-collections = false
+dropped-databases = false
+direct-read-namespaces=["Urls.folder"]
+change-stream-namespaces = ["Urls.folder"]
+elasticsearch-validate-pem-file = false
+elasticsearch-healthcheck-timeout-startup = 200
+elasticsearch-healthcheck-timeout = 200
+index-as-update=true
+
+[logs]
+info="/var/logs/monstache/info.log"
+warn="/var/logs/monstache/warn.log"
+error="/var/logs/monstache/error.log"
+trace="/var/logs/monstache/trace.log"
+
+[[mapping]]
+namespace = "Urls.folder"
+index = "folder_v14"

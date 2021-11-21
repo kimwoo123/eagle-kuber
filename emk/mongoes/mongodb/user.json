@@ -1,0 +1,61 @@
+[{
+  "_id": {
+    "$oid": "617b44a40c064bceda11fcb2"
+  },
+  "email": "ssafy@ssafy.com",
+  "nickname": "ssafy",
+  "avatar": "https://via.placeholder.com/200.jpg",
+  "tags": [],
+  "folders": [],
+  "password": {
+    "$binary": {
+      "base64": "JDJiJDEyJGkzRDFpT1BnUXF0U1FwQ1NMcWlOSXVodnhva3JLVDFJNGtUbnFVQWNqSDduTjRqYkJ0LlZT",
+      "subType": "00"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "617b64d14d14691032357ed1"
+  },
+  "email": "rmlgml@naver.com",
+  "nickname": "ekdms20",
+  "avatar": "https://via.placeholder.com/200.jpg",
+  "tags": [],
+  "folders": [],
+  "password": {
+    "$binary": {
+      "base64": "JDJiJDEyJDJXOFRhMW5IL1ljVi56UWtQdGhwUS5nUmRmd2xISkh3dk9VTlpFSllsTGhLLnRQcDRsd0tL",
+      "subType": "00"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "617b70a34d8f30768ca03e81"
+  },
+  "email": "ssafy2@ssafy.com",
+  "nickname": "ssafy",
+  "avatar": "https://via.placeholder.com/200.jpg",
+  "tags": [],
+  "folders": [],
+  "password": {
+    "$binary": {
+      "base64": "JDJiJDEyJDY2YmR5ZW9Oc0t5WlF5WjVtaGEuSmVEakFkckcyd2ZOSy96bTI2Z1poL3VFa3c5a2ljaFcu",
+      "subType": "00"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "617b737c4d8f30768ca03e82"
+  },
+  "email": "rmlgml2@naver.com",
+  "nickname": "ssafy",
+  "avatar": "https://via.placeholder.com/200.jpg",
+  "tags": [],
+  "folders": [],
+  "password": {
+    "$binary": {
+      "base64": "JDJiJDEyJEdoQlJGb0FWQkwuclExWFlxT2MweHVXcjc1NlJoT3hwRGdVOGY2LmpXakxJVVFWMExZYTY2",
+      "subType": "00"
+    }
+  }
+}]

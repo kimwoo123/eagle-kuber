@@ -1,0 +1,46 @@
+version: '3'
+services:
+  mongo1:
+    image: "mongo"
+    ports:
+      - "27020:27017"
+    volumes:
+      - /home/ubuntu/mongoes/mongdob/db1:/data/db
+    networks:
+      - mongo-networks
+    command: mongod --replSet replication --port 27020
+    container_name: mongo1
+  mongo2:
+    image: "mongo"
+    ports:
+      - "27021:27017"
+    volumes:
+      - /home/ubuntu/mongoes/mongdob/db2:/data/db
+    networks:
+      - mongo-networks
+    command: mongod --replSet replication --port 27021
+    container_name: mongo2
+    depends_on:
+      - mongo1
+  mongo3:
+    image: "mongo"
+    ports:
+      - "27022:27017"
+    volumes:
+      - /home/ubuntu/mongoes/mongdob/db3:/data/db
+    networks:
+      - mongo-networks
+    command: mongod --replSet replication --port 27022
+    container_name: mongo3
+    depends_on:
+      - mongo2
+  mongosetup:
+    image: "setup-rspl"
+    depends_on:
+      - mongo1
+    networks:
+      - mongo-networks
+
+networks:
+  mongo-networks:
+    driver: bridge

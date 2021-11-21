@@ -1,0 +1,48 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: web-front-ingress
+  labels:
+    name: web-front-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  defaultBackend:
+    service:
+      name: default-http-backend
+      port:
+        number: 80
+  rules:
+  - http:
+      paths:
+      - path: "/eagle-front/.*"
+        pathType: Prefix
+        backend:
+          service:
+            name: eagle-front
+            port:
+              number: 80
+      - path: "/"
+        pathType: Prefix
+        backend:
+          service:
+            name: eagle-back
+            port:
+              number: 4000
+      - path: "/db"
+        pathType: Prefix
+        backend:
+          service:
+            name: mongodb-service
+            port:
+              number: 27017
+      - path: "/grafana"
+        pathType: Prefix
+        backend:
+          service:
+            name: grafana
+            port:
+              number: 3000
+      
+          
+
