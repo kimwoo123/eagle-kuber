@@ -1,0 +1,28 @@
+FROM python:3.8
+
+ENV LANG=C.UTF-8
+ENV TZ=Asia/Seoul
+
+# apt setting
+RUN apt-get update && apt-get install -y --no-install-recommends tzdata g++ git curl
+
+# installing java jdk and java jre
+RUN apt-get install -y default-jdk default-jre
+
+# apt cleanse
+RUN apt-get clean && rm -rf /var/lib/apt/lists/*
+
+# timezone
+RUN ln -sf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+
+# make workspace
+RUN mkdir -p /workspace
+WORKDIR /workspace
+
+# vim download
+RUN apt-get update && apt-get install -y vim
+
+# install knolpy dependencies: jpype, konlpy, with mecab module
+RUN pip install jpype1-py3 konlpy requests beautifulsoup4
+RUN pip install --upgrade tweepy==3.10.0
+RUN cd /workspace && curl -s https://raw.githubusercontent.com/konlpy/konlpy/master/scripts/mecab.sh | bash -s 
